@@ -15,7 +15,7 @@ public class Raptor {
     
     private let socket: Socket
     
-    public init(host: String, port: Int32, password: String) throws {
+    public init(host: String, port: Int32, password: String) throws{
         self.host = host
         self.port = port
         self.password = password
@@ -30,7 +30,7 @@ public class Raptor {
         socket.close()
     }
     
-    public func sendCommand(_ command: String) throws {
+    public func sendCommand(_ command: String)  throws -> Data {
         try write(.serverCommand, message: command)
     }
     
